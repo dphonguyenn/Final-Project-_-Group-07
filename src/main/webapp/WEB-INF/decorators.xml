@@ -40,7 +40,4 @@
      <decorator name="product-details" page="product-details.jsp">
         <pattern>/product-details*</pattern>
     </decorator>
-     <decorator name="Ex1" page="Ex1.jsp">
-        <pattern>/Ex1*</pattern>
-    </decorator>
 </decorators>

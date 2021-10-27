@@ -7,11 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<footer class="py-5 bg-dark">
-		<div class="container">
-			<p class="m-0 text-center text-white">Copyright &copy; Your
-				Website 2021</p>
-		</div>
-	</footer>
+	<div id="footer">&copy GROUP 7</div>
 </body>
 </html>

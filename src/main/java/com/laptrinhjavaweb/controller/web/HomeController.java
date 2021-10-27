@@ -15,7 +15,7 @@ import murach.business.User;
 import murach.data.UserDB;
 
 @WebServlet(urlPatterns = { "/index", "/trang-chu", "/dang-nhap", "/cart", "/blog-single", "/blog", "/404", "/checkout",
-		"/contact-us", "/product-details", "/Ex1" })
+		"/contact-us", "/product-details" })
 public class HomeController extends HttpServlet {
 	private static final long serialVersionUID = 2686801510274002166L;
 
@@ -56,30 +56,6 @@ public class HomeController extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("utf-8");
 
-		// get current action
-		String action1 = request.getParameter("action");
-		if (action1 == null) {
-			action1 = "join"; // default action
-		}
-		// perform action and set URL to appropriate page
-		if (action1.equals("join")) {
-			RequestDispatcher rd2 = request.getRequestDispatcher("/views/Ex1.jsp");
-			rd2.forward(request, response);
-		} else if (action1.equals("add")) {
-			// get parameters from the request
-			String firstName = request.getParameter("firstName");
-			String lastName = request.getParameter("lastName");
-			String email = request.getParameter("email");
-
-			// store data in User object and save User object in db
-			User user = new User(firstName, lastName, email);
-			UserDB.insert(user);
-
-			// set User object in request object and set URL
-			request.setAttribute("user", user);
-			RequestDispatcher rd2 = request.getRequestDispatcher("thanks.jsp");
-			rd2.forward(request, response);
-		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

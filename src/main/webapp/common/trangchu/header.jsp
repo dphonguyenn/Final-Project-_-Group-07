@@ -7,26 +7,23 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<div class="container px-lg-5">
-			<a class="navbar-brand" href="#!">DEMO EXERCISE</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+<body>			
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-collapse">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href='<c:url value="/index?action=null" />'>Exercise</a></li>
-					<li class="nav-item"><a
-						href='<c:url value="/trang-chu?action=trang-chu" />' class="active">Project</a></li>
-					<li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-				</ul>
-			</div>
+			<a class="navbar-brand" href="#">GROUP 7</a>
 		</div>
-	</nav>
+		<div class="navbar-collapse collapse move-me">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#home">HOME</a></li>
+				<li><a href="#features-sec">EXERCISES</a></li>
+				<li><a href="#faculty-sec">MY TEAM</a></li>
+				<li><a href="#course-sec">FINAL PROJECT</a></li>
+				<li><a href="#contact-sec">CONTACT</a></li>
+			</ul>
+		</div>
 </body>
 </html>
