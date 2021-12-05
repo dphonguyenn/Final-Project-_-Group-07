@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<!--/slider-->
+
 	<div class="row">
 		<div class="col-sm-3">
 			<div class="left-sidebar">
@@ -26,11 +28,9 @@
 						<div id="sportswear" class="panel-collapse collapse">
 							<div class="panel-body">
 								<ul>
-									<li><a href="">Nike </a></li>
-									<li><a href="">Under Armour </a></li>
-									<li><a href="">Adidas </a></li>
-									<li><a href="">Puma</a></li>
-									<li><a href="">ASICS </a></li>
+									<c:forEach items="${listCC}" var="o">
+										<li><a href="category?cid=${o.cid}">${o.cname} </a></li>
+									</c:forEach>
 								</ul>
 							</div>
 						</div>
@@ -47,16 +47,16 @@
 						<div id="mens" class="panel-collapse collapse">
 							<div class="panel-body">
 								<ul>
-									<li><a href="">Fendi</a></li>
-									<li><a href="">Guess</a></li>
-									<li><a href="">Valentino</a></li>
-									<li><a href="">Dior</a></li>
-									<li><a href="">Versace</a></li>
-									<li><a href="">Armani</a></li>
-									<li><a href="">Prada</a></li>
-									<li><a href="">Dolce and Gabbana</a></li>
-									<li><a href="">Chanel</a></li>
-									<li><a href="">Gucci</a></li>
+									<li><a href="#">Fendi</a></li>
+									<li><a href="#">Guess</a></li>
+									<li><a href="#">Valentino</a></li>
+									<li><a href="#">Dior</a></li>
+									<li><a href="#">Versace</a></li>
+									<li><a href="#">Armani</a></li>
+									<li><a href="#">Prada</a></li>
+									<li><a href="#">Dolce and Gabbana</a></li>
+									<li><a href="#">Chanel</a></li>
+									<li><a href="#">Gucci</a></li>
 								</ul>
 							</div>
 						</div>
@@ -74,11 +74,11 @@
 						<div id="womens" class="panel-collapse collapse">
 							<div class="panel-body">
 								<ul>
-									<li><a href="">Fendi</a></li>
-									<li><a href="">Guess</a></li>
-									<li><a href="">Valentino</a></li>
-									<li><a href="">Dior</a></li>
-									<li><a href="">Versace</a></li>
+									<li><a href="#">Fendi</a></li>
+									<li><a href="#">Guess</a></li>
+									<li><a href="#">Valentino</a></li>
+									<li><a href="#">Dior</a></li>
+									<li><a href="#">Versace</a></li>
 								</ul>
 							</div>
 						</div>
@@ -137,26 +137,14 @@
 
 				<div class="brands_products">
 					<!--brands_products-->
-					<h2>Brands</h2>
+					<h2>Last Product</h2>
 					<div class="brands-name">
-						<ul class="nav nav-pills nav-stacked">
-							<li><a href=""> <span class="pull-right">(50)</span>Acne
-							</a></li>
-							<li><a href=""> <span class="pull-right">(56)</span>Grüne
-									Erde
-							</a></li>
-							<li><a href=""> <span class="pull-right">(27)</span>Albiro
-							</a></li>
-							<li><a href=""> <span class="pull-right">(32)</span>Ronhill
-							</a></li>
-							<li><a href=""> <span class="pull-right">(5)</span>Oddmolly
-							</a></li>
-							<li><a href=""> <span class="pull-right">(9)</span>Boudestijn
-							</a></li>
-							<li><a href=""> <span class="pull-right">(4)</span>Rösch
-									creative culture
-							</a></li>
-						</ul>
+						<div class="shipping text-center">
+							<!--shipping-->
+							<img src="<c:url value='/template/web/images/home/thien.png' />"
+								alt="" /> <>
+						</div>
+						<!--/shipping-->
 					</div>
 				</div>
 				<!--/brands_products-->
@@ -164,18 +152,18 @@
 				<div class="price-range">
 					<!--price-range-->
 					<h2>Price Range</h2>
-					<div class="well">
+					<div class="well text-center">
 						<input type="text" class="span2" value="" data-slider-min="0"
 							data-slider-max="600" data-slider-step="5"
-							data-slider-value="[250,450]" id="sl2"><br /> <b>$ 0</b>
-						<b class="pull-right">$ 600</b>
+							data-slider-value="[250,450]" id="sl2"><br /> <b
+							class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
 					</div>
 				</div>
 				<!--/price-range-->
 
 				<div class="shipping text-center">
 					<!--shipping-->
-					<img src="<c:url value='/template/web/images/home/shipping.jpg' />"
+					<img src="<c:url value='/template/web/images/home/thien1.png' />"
 						alt="" />
 				</div>
 				<!--/shipping-->
@@ -188,9 +176,7 @@
 				<!--product-details-->
 				<div class="col-sm-5">
 					<div class="view-product">
-						<img
-							src="<c:url value='/template/web/images/product-details/1.jpg' />"
-							alt="" />
+						<img src="${detail.image}" alt="" />
 						<h3>ZOOM</h3>
 					</div>
 					<div id="similar-product" class="carousel slide"
@@ -199,31 +185,19 @@
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner">
 							<div class="item active">
-								<a href=""><img
-									src="<c:url value='/template/web/images/product-details/similar1.jpg' />"
-									alt=""></a> <a href=""><img
-									src="<c:url value='/template/web/images/product-details/similar2.jpg' />"
-									alt=""></a> <a href=""><img
-									src="<c:url value='/template/web/images/product-details/similar3.jpg' />"
-									alt=""></a>
+								<a href=""><img src="${detail.image1}" alt=""></a> <a
+									href=""><img src="${detail.image2}" alt=""></a> <a href=""><img
+									src="${detail.image3}" alt=""></a>
 							</div>
 							<div class="item">
-								<a href=""><img
-									src="<c:url value='/template/web/images/product-details/similar1.jpg' />"
-									alt=""></a> <a href=""><img
-									src="<c:url value='/template/web/images/product-details/similar2.jpg' />"
-									alt=""></a> <a href=""><img
-									src="<c:url value='/template/web/images/product-details/similar3.jpg' />"
-									alt=""></a>
+								<a href=""><img src="${detail.image1}" alt=""></a> <a
+									href=""><img src="${detail.image2}" alt=""></a> <a href=""><img
+									src="${detail.image3}" alt=""></a>
 							</div>
 							<div class="item">
-								<a href=""><img
-									src="<c:url value='/template/web/images/product-details/similar1.jpg' />"
-									alt=""></a> <a href=""><img
-									src="<c:url value='/template/web/images/product-details/similar2.jpg' />"
-									alt=""></a> <a href=""><img
-									src="<c:url value='/template/web/images/product-details/similar3.jpg' />"
-									alt=""></a>
+								<a href=""><img src="${detail.image1}" alt=""></a> <a
+									href=""><img src="${detail.image2}" alt=""></a> <a href=""><img
+									src="${detail.image3}" alt=""></a>
 							</div>
 
 						</div>
@@ -243,25 +217,20 @@
 						<img
 							src="<c:url value='/template/web/images/product-details/new.jpg' />"
 							class="newarrival" alt="" />
-						<h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-						<p>Web ID: 1089772</p>
+						<h2>${detail.name}</h2>
+						<p>${detail.id}</p>
 						<img
 							src="<c:url value='/template/web/images/product-details/rating.png ' />"
-							alt="" /> <span> <span>US $59</span> <label>Quantity:</label>
+							alt="" /> <span> <span>${detail.price}</span> <label>Quantity:</label>
 							<input type="text" value="3" />
 							<button type="button" class="btn btn-fefault cart">
 								<i class="fa fa-shopping-cart"></i> Add to cart
 							</button>
 						</span>
 						<p>
-							<b>Availability:</b> In Stock
+							<b>Description:</b>${detail.description}
 						</p>
-						<p>
-							<b>Condition:</b> New
-						</p>
-						<p>
-							<b>Brand:</b> E-SHOPPER
-						</p>
+
 						<a href=""><img
 							src="<c:url value='/template/web/images/product-details/share.png' />"
 							class="share img-responsive" alt="" /></a>
@@ -454,7 +423,8 @@
 								<div class="single-products">
 									<div class="productinfo text-center">
 										<img
-											src="<c:url value='/template/web/images/home/gallery3.jpg ' />" alt="" />
+											src="<c:url value='/template/web/images/home/gallery3.jpg ' />"
+											alt="" />
 										<h2>$56</h2>
 										<p>Easy Polo Black Edition</p>
 										<button type="button" class="btn btn-default add-to-cart">
@@ -469,7 +439,8 @@
 								<div class="single-products">
 									<div class="productinfo text-center">
 										<img
-											src="<c:url value='/template/web/images/home/gallery4.jpg' />" alt="" />
+											src="<c:url value='/template/web/images/home/gallery4.jpg' />"
+											alt="" />
 										<h2>$56</h2>
 										<p>Easy Polo Black Edition</p>
 										<button type="button" class="btn btn-default add-to-cart">
@@ -525,99 +496,25 @@
 					data-ride="carousel">
 					<div class="carousel-inner">
 						<div class="item active">
-							<div class="col-sm-4">
-								<div class="product-image-wrapper">
-									<div class="single-products">
-										<div class="productinfo text-center">
-											<img
-												src="<c:url value='/template/web/images/home/recommend1.jpg' />" alt="" />
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<button type="button" class="btn btn-default add-to-cart">
-												<i class="fa fa-shopping-cart"></i>Add to cart
-											</button>
+							<c:forEach items="${listP}" var="o">
+								<div class="col-sm-4">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="${o.image}" alt="" />
+												<h2>${ o.price}</h2>
+												<p>${ o.name}</p>
+												<button type="button" class="btn btn-default add-to-cart">
+													<i class="fa fa-shopping-cart"></i>Add to cart
+												</button>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="product-image-wrapper">
-									<div class="single-products">
-										<div class="productinfo text-center">
-											<img
-												src="<c:url value='/template/web/images/home/recommend2.jpg' />" alt="" />
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<button type="button" class="btn btn-default add-to-cart">
-												<i class="fa fa-shopping-cart"></i>Add to cart
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="product-image-wrapper">
-									<div class="single-products">
-										<div class="productinfo text-center">
-											<img
-												src="<c:url value='/template/web/images/home/recommend3.jpg' />" alt="" />
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<button type="button" class="btn btn-default add-to-cart">
-												<i class="fa fa-shopping-cart"></i>Add to cart
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
+							</c:forEach>
 						</div>
-						<div class="item">
-							<div class="col-sm-4">
-								<div class="product-image-wrapper">
-									<div class="single-products">
-										<div class="productinfo text-center">
-											<img
-												src="<c:url value='/template/web/images/home/recommend1.jpg' />" alt="" />
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<button type="button" class="btn btn-default add-to-cart">
-												<i class="fa fa-shopping-cart"></i>Add to cart
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="product-image-wrapper">
-									<div class="single-products">
-										<div class="productinfo text-center">
-											<img
-												src="<c:url value='/template/web/images/home/recommend2.jpg' />" alt="" />
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<button type="button" class="btn btn-default add-to-cart">
-												<i class="fa fa-shopping-cart"></i>Add to cart
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="product-image-wrapper">
-									<div class="single-products">
-										<div class="productinfo text-center">
-											<img
-												src="<c:url value='/template/web/images/home/recommend3.jpg ' />" alt="" />
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<button type="button" class="btn btn-default add-to-cart">
-												<i class="fa fa-shopping-cart"></i>Add to cart
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+
+
 					</div>
 					<a class="left recommended-item-control"
 						href="#recommended-item-carousel" data-slide="prev"> <i

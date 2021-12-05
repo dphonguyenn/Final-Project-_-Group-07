@@ -13,8 +13,8 @@
      <decorator name="index" page="index.jsp">
         <pattern>/index*</pattern>
     </decorator>
-    <decorator name="web" page="web.jsp">
-        <pattern>/*</pattern>
+    <decorator name="home" page="home.jsp">
+        <pattern>/home*</pattern>
     </decorator>
     <decorator name="login" page="login.jsp">
         <pattern>/dang-nhap*</pattern>
@@ -39,5 +39,8 @@
     </decorator>
      <decorator name="product-details" page="product-details.jsp">
         <pattern>/product-details*</pattern>
+    </decorator>
+     <decorator name="category" page="home.jsp">
+        <pattern>/category*</pattern>
     </decorator>
 </decorators>

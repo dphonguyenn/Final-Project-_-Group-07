@@ -36,7 +36,7 @@
 			<div class="row">
 				<div class="col-md-4 clearfix">
 					<div class="logo pull-left">
-						<a href='<c:url value="/trang-chu?action=trang-chu" />'><img
+						<a href='<c:url value="/home?action=home" />'><img
 							src="<c:url value='/template/web/images/home/logo.png'/>" alt="" /></a>
 					</div>
 					<div class="btn-group pull-right clearfix">
@@ -66,14 +66,28 @@
 				<div class="col-md-8 clearfix">
 					<div class="shop-menu clearfix pull-right">
 						<ul class="nav navbar-nav">
-							<li><a href=""><i class="fa fa-user"></i> Account</a></li>
-							<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
+							<c:if test="${sessionScope.account.isAdmin == 1}">
+								<li><a href=""><i class="fa fa-user"></i> Manage
+										Account</a></li>
+							</c:if>
+							<c:if test="${sessionScope.account.isSell == 1}">
+								<li><a href="manager"><i class="fa fa-star"></i> Manage
+										Product</a></li>
+							</c:if>
 							<li><a href='<c:url value="/checkout?action=checkout" />'><i
 									class="fa fa-crosshairs"></i> Checkout</a></li>
 							<li><a href='<c:url value="/cart?action=cart" />'><i
 									class="fa fa-shopping-cart"></i> Cart</a></li>
-							<li><a href='<c:url value="/dang-nhap?action=login" />'><i
-									class="fa fa-lock"></i> Login</a></li>
+							<c:if test="${sessionScope.account == null}">
+								<li><a href='<c:url value="/dang-nhap?action=login" />'><i
+										class="fa fa-lock"></i> Login</a></li>
+							</c:if>
+							<c:if test="${sessionScope.account != null}">
+								<li><a href=""><i class="fa fa-lock"></i> Hello
+										${sessionScope.account.user}</a></li>
+								<li><a href="logout"><i class="fa fa-lock"></i> Logout</a></li>
+
+							</c:if>
 						</ul>
 					</div>
 				</div>
@@ -97,7 +111,7 @@
 					</div>
 					<div class="mainmenu pull-left">
 						<ul class="nav navbar-nav collapse navbar-collapse">
-							<li><a href='<c:url value="/trang-chu?action=trang-chu" />'
+							<li><a href='<c:url value="/home?action=home" />'
 								class="active">Home</a></li>
 							<li class="dropdown"><a href="#">Shop<i
 									class="fa fa-angle-down"></i></a>
@@ -127,11 +141,13 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-sm-3">
-					<div class="search_box pull-right">
-						<input type="text" placeholder="Search" />
+				<form action="search" method="post">
+					<div class="col-sm-3">
+						<div class="search_box pull-right">
+							<input name="txt" type="text" placeholder="Search" />
+						</div>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -196,7 +212,7 @@
 									<span>E</span>-SHOPPER
 								</h1>
 								<p>The pain itself is love, the main iterative process, but
-									I give them as much time as fatigue and great pain so	mething.</p>
+									I give them as much time as fatigue and great pain so mething.</p>
 								<button type="button" class="btn btn-default get">Get
 									it now</button>
 							</div>

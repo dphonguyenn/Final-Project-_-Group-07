@@ -43,7 +43,7 @@
 	<!-- header -->
 
 	<div class="container">
-		<dec:body />
+			<%@ include file="/views/product-details.jsp"%>
 	</div>
 
 	<!-- footer -->
