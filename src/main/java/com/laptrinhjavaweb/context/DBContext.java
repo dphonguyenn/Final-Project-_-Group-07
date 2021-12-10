@@ -26,4 +26,11 @@ public class DBContext {
     private final String instance = "";//LEAVE THIS ONE EMPTY IF YOUR SQL IS A SINGLE INSTANCE
     private final String userID = "sa";
     private final String password = "Password789";  
+    public static void main(String[] args)
+    {
+    	try {
+    		System.out.println(new DBContext().getConnection());
+    	}catch (Exception e) 
+    	{}
+    }
 }

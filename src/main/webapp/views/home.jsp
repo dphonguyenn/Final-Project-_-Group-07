@@ -185,7 +185,7 @@
 									<img src="${o.image}/>" alt="" />
 									<h2>${o.price}</h2>
 									<p><a href = "detail?pid=${o.id}">${o.name}</a></p>
-									<a href="cart?id=${o.id}" class="btn btn-default add-to-cart"><i
+									<a href="#" class="btn btn-default add-to-cart"><i
 										class="fa fa-shopping-cart"></i>Add to cart</a>
 								</div>
 							</div>
